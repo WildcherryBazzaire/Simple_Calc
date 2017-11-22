@@ -1,4 +1,4 @@
-var calculator = function(x,y,z) {
+var calculator = (x,y,z) => { //update: replaced function with arrow to see if it worked 
 	
 	x = x.toLowerCase(); // lower cases x/input
 	
@@ -59,20 +59,20 @@ calcInput.prompt(); //prompts
 //bus is here; a.k.a magic
 calcInput.on('line', (answer) => { //.on property works as a Eventlistener for this molecule. so whenever 'line'->enter or return key is pressed, the function with the parameter answer which hold the value of line, is executed 
 	if(array.length == 0) { //pushes operator input to array
-		array.push(answer);
+		array.push(answer); // => is equal to function(){} 
 		calcInput.setPrompt('Value 1: '); //sets prompts value to enter Value 1
 		calcInput.prompt();
 	} else if(array.length == 1) {
-		array.push(answer); //pushes value 1
+		array.push(parseInt(answer)); //pushes value 1
 		calcInput.setPrompt('Value 2: '); //sets prompts value to enter Value 2
 		calcInput.prompt();
 	} else if(array.length == 2) {
-		array.push(answer); //pushes value 2
+		array.push(parseInt(answer)); //pushes value 2
 		calcInput.setPrompt('Sauce?: ') //sets prompt to sauce
 		calcInput.prompt(); 
 	} else {
 		array.push(answer) 
-		console.log("your result is: " + calculator(array[0],array[1],array[2]) + ' and ' + array[3] + 'oz of Cranberry Sauce'); //returns the calculations
+		console.log("your result is: " + calculator(array[0],array[1],array[2]) + ' with ' + array[3] + ' ounces of Cranberry Sauce'); //returns the calculations
 		calcInput.close(); // closes/exits the stream
 	}
 });
