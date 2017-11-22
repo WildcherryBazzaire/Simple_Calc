@@ -72,7 +72,7 @@ calcInput.on('line', (answer) => { //.on property works as a Eventlistener for t
 		calcInput.prompt(); 
 	} else {
 		array.push(answer) 
-		console.log("your result is: " + calculator(array[0],array[1],array[2]) + ' with ' + array[3] + ' ounces of Cranberry Sauce'); //returns the calculations
+		console.log("your result is: " + calculator(array[0],array[1],array[2]) + ' with ' + array[3] + ' ounces of ' + '\x1b[31m','Cranberry Sauce'); //returns the calculations
 		calcInput.close(); // closes/exits the stream
 	}
 });
